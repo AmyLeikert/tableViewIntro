@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3400" systemVersion="13A603" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Flavors" representedClassName="Flavors" syncable="YES">
+        <attribute name="dateEntered" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateUpdated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="flavorDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="flavorImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="flavorName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="flavorOrder" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="flavorRating" optional="YES" attributeType="Decimal" defaultValueString="0" syncable="YES"/>
+        <attribute name="userID" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationshipFlavorInventoryItems" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="InventoryItems" inverseName="relationshipInventoryItemFlavor" inverseEntity="InventoryItems" syncable="YES"/>
+    </entity>
+    <entity name="InventoryItems" representedClassName="InventoryItems" syncable="YES">
+        <attribute name="dateEntered" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateInInventory" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateOpened" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateUpdated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateUseBy" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="sizeInGallons" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="userID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vendorName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationshipInventoryItemFlavor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Flavors" inverseName="relationshipFlavorInventoryItems" inverseEntity="Flavors" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="InventoryItems" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Flavors" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>
